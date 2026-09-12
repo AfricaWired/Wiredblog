@@ -1,0 +1,60 @@
+- title: Software Engineering & App Development
+  icon: fa-code
+  summary: Web, mobile, desktop and enterprise applications — custom-built or delivered as SaaS.
+  description: >-
+    Web, mobile (Android & iOS), desktop and enterprise applications — custom-built or delivered as
+    SaaS, with APIs and third-party integrations.
+- title: Systems Architecture & IT Solutions
+  icon: fa-sitemap
+  summary: Enterprise architecture, distributed systems and digital transformation consulting.
+  description: >-
+    Enterprise systems architecture, distributed and microservices design, systems integration, and
+    digital transformation consulting.
+- title: Hosting, Cloud & Infrastructure
+  icon: fa-cloud
+  summary: Cloud, hybrid and on-premises hosting, server administration and DR planning.
+  description: >-
+    Cloud, hybrid and on-premises hosting, server administration, domain & DNS management, backup and
+    disaster recovery.
+- title: Cybersecurity
+  icon: fa-shield-alt
+  summary: Penetration testing, vulnerability assessments and secure software development.
+  description: >-
+    Penetration testing, vulnerability assessments, security audits, secure software development, and
+    incident-response consulting.
+- title: UI/UX & Graphic Design
+  icon: fa-paint-brush
+  summary: Interface and experience design, digital branding and design systems.
+  description: >-
+    Interface and experience design for web & mobile, digital branding and corporate identity,
+    prototyping, and design systems.
+- title: Data & Artificial Intelligence
+  icon: fa-chart-line
+  summary: Data engineering, business intelligence and AI-powered automation.
+  description: >-
+    Data engineering, business intelligence, machine-learning solutions, AI-powered automation, and
+    intelligent search.
+- title: Automation & Digital Solutions
+  icon: fa-cogs
+  summary: Business-process automation, ERP & CRM systems, digital platforms.
+  description: >-
+    Business-process automation, workflow management, document management, ERP & CRM systems, digital
+    payment integrations.
+- title: Software Consulting & Technical Services
+  icon: fa-users
+  summary: Systems analysis, architecture consultancy and technical project management.
+  description: >-
+    Systems analysis, software architecture consultancy, technical project management, quality
+    assurance, and code review.
+- title: Training & Professional Development
+  icon: fa-graduation-cap
+  summary: Software engineering, cybersecurity, cloud and data-engineering training.
+  description: >-
+    Software engineering, cybersecurity & ethical hacking, systems administration, cloud, and
+    data-engineering training.
+- title: Research, Innovation & Product Development
+  icon: fa-flask
+  summary: R&D of software technologies and proprietary product development.
+  description: >-
+    R&D of software technologies, proprietary product development, and research into emerging
+    technologies.

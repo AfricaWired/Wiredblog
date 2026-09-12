@@ -1,0 +1,33 @@
+<footer id="footer">
+  <section>
+    <h3>{{ site.company.name }}</h3>
+    <p>A software engineering company based in {{ site.company.address_line }}, {{ site.company.country }} — building web, mobile, cloud, AI and cybersecurity solutions for businesses across Africa.</p>
+    <ul class="actions">
+      <li><a href="{{ '/services/' | relative_url }}" class="button">Our Services</a></li>
+    </ul>
+  </section>
+  <section class="split contact">
+    <section class="alt">
+      <h3>Address</h3>
+      <p>{{ site.company.address_line }}<br>{{ site.company.country }}</p>
+    </section>
+    <section>
+      <h3>Email</h3>
+      <p><a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a></p>
+    </section>
+    <section>
+      <h3>Elsewhere</h3>
+      <ul class="icons alt">
+        <li><a href="{{ '/blog/feed.xml' | relative_url }}" class="icon solid alt fa-rss"><span class="label">RSS</span></a></li>
+        <li><a href="{{ site.company.website }}" target="_blank" rel="noopener" class="icon solid alt fa-globe"><span class="label">Website</span></a></li>
+      </ul>
+    </section>
+  </section>
+</footer>
+
+<div id="copyright">
+  <ul>
+    <li>&copy; {{ site.time | date: "%Y" }} {{ site.company.name }}</li>
+    <li>{{ site.company.address_line }}, {{ site.company.country }}</li>
+  </ul>
+</div>

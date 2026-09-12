@@ -1,0 +1,18 @@
+<header id="header">
+  <a href="{{ '/' | relative_url }}" class="logo">AfricaWired</a>
+</header>
+
+<nav id="nav">
+  <ul class="links">
+    <li{% if page.nav == "home" %} class="active"{% endif %}><a href="{{ '/' | relative_url }}">Home</a></li>
+    <li{% if page.nav == "services" %} class="active"{% endif %}><a href="{{ '/services/' | relative_url }}">Services</a></li>
+    <li{% if page.nav == "blog" %} class="active"{% endif %}><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+    <li{% if page.nav == "about" %} class="active"{% endif %}><a href="{{ '/about/' | relative_url }}">About</a></li>
+  </ul>
+  <ul class="icons">
+    <li><a href="#" id="theme-toggle" class="icon solid fa-moon"><span class="label">Toggle dark mode</span></a></li>
+    <li><a href="{{ '/blog/feed.xml' | relative_url }}" class="icon solid fa-rss"><span class="label">RSS Feed</span></a></li>
+    <li><a href="mailto:{{ site.company.email }}" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+    <li><a href="{{ site.company.website }}" target="_blank" rel="noopener" class="icon solid fa-globe"><span class="label">Website</span></a></li>
+  </ul>
+</nav>

@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<section class="post">
+  <header class="major">
+    <h1>{{ page.category }}</h1>
+    {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+  </header>
+  <p><a href="{{ '/blog/' | relative_url }}" class="tag">&larr; All Categories</a></p>
+</section>
+
+{% assign category_posts = site.posts | where: "category", page.category %}
+<section class="posts">
+  {% for post in category_posts %}
+    <article>
+      <header>
+        <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      </header>
+      {% if post.image %}
+        <a href="{{ post.url | relative_url }}" class="image fit"><img src="{{ post.image | relative_url }}" alt="{{ post.title }}"></a>
+      {% endif %}
+      <p>{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
+      <ul class="actions special">
+        <li><a href="{{ post.url | relative_url }}" class="button">Full Story</a></li>
+      </ul>
+    </article>
+  {% else %}
+    <p>No articles in this category yet.</p>
+  {% endfor %}
+</section>

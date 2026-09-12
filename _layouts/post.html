@@ -1,0 +1,54 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="major">
+    <span class="date">{{ page.date | date: "%b %-d, %Y" }}</span>
+    <h1>{{ page.title }}</h1>
+    {% if page.excerpt %}<p>{{ page.excerpt | strip_html | strip_newlines }}</p>{% endif %}
+  </header>
+
+  <p class="post-meta">
+    By {{ page.author | default: site.company.name }}
+    <span class="sep">&middot;</span>{{ content | strip_html | number_of_words | divided_by: 200 | at_least: 1 }} min read
+  </p>
+
+  {% if page.image %}
+    <span class="image main"><img src="{{ page.image | relative_url }}" alt="{{ page.title }}"></span>
+  {% endif %}
+
+  {{ content }}
+
+  <footer>
+    {% if page.category %}
+      {% assign cat = site.data.categories | where: "name", page.category | first %}
+      {% if cat %}<p><a href="{{ '/categories/' | append: cat.slug | append: '/' | relative_url }}" class="tag">{{ cat.name }}</a></p>{% endif %}
+    {% endif %}
+  </footer>
+</article>
+
+{% assign related = site.posts | where: "category", page.category | where_exp: "p", "p.url != page.url" | slice: 0, 3 %}
+{% if related.size > 0 %}
+<section class="post">
+  <header class="major">
+    <h2>Related Articles</h2>
+  </header>
+</section>
+
+<section class="posts">
+  {% for related_post in related %}
+    <article>
+      <header>
+        <span class="date">{{ related_post.date | date: "%b %-d, %Y" }}</span>
+        <h3><a href="{{ related_post.url | relative_url }}">{{ related_post.title }}</a></h3>
+      </header>
+      {% if related_post.image %}
+        <a href="{{ related_post.url | relative_url }}" class="image fit"><img src="{{ related_post.image | relative_url }}" alt="{{ related_post.title }}"></a>
+      {% endif %}
+      <ul class="actions special">
+        <li><a href="{{ related_post.url | relative_url }}" class="button">Full Story</a></li>
+      </ul>
+    </article>
+  {% endfor %}
+</section>
+{% endif %}

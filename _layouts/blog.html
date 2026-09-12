@@ -1,0 +1,58 @@
+---
+layout: default
+---
+<section class="post">
+  <header class="major">
+    <h1>{{ page.title | default: "Blog" }}</h1>
+    <p>Engineering notes on software, cloud, security and AI from the {{ site.company.name }} team.</p>
+  </header>
+
+  <p>
+    {% for cat in site.data.categories %}
+      <a href="{{ '/categories/' | append: cat.slug | append: '/' | relative_url }}" class="tag">{{ cat.name }}</a>
+    {% endfor %}
+  </p>
+</section>
+
+<section class="posts">
+  {% for post in paginator.posts %}
+    <article>
+      <header>
+        <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      </header>
+      {% if post.image %}
+        <a href="{{ post.url | relative_url }}" class="image fit"><img src="{{ post.image | relative_url }}" alt="{{ post.title }}"></a>
+      {% endif %}
+      <p>{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
+      {% if post.category %}<p><span class="tag">{{ post.category }}</span></p>{% endif %}
+      <ul class="actions special">
+        <li><a href="{{ post.url | relative_url }}" class="button">Full Story</a></li>
+      </ul>
+    </article>
+  {% else %}
+    <p>No articles found. Check back soon.</p>
+  {% endfor %}
+</section>
+
+{% if paginator.total_pages > 1 %}
+<footer>
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">Previous</a>
+    {% endif %}
+    {% for p in (1..paginator.total_pages) %}
+      {% if p == paginator.page %}
+        <span class="page active">{{ p }}</span>
+      {% elsif p == 1 %}
+        <a href="{{ '/blog/' | relative_url }}" class="page">{{ p }}</a>
+      {% else %}
+        <a href="{{ site.paginate_path | replace: ':num', p | relative_url }}" class="page">{{ p }}</a>
+      {% endif %}
+    {% endfor %}
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}" class="next">Next</a>
+    {% endif %}
+  </div>
+</footer>
+{% endif %}

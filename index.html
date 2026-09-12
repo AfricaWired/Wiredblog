@@ -1,0 +1,73 @@
+---
+layout: default
+title: Home
+hero: true
+nav: home
+permalink: /
+---
+<section class="post">
+  <header class="major">
+    <h2>What We Do</h2>
+    <p>A full-stack technology partner — from a single product idea<br>
+    through to production infrastructure and ongoing support.</p>
+  </header>
+
+  <div class="row">
+    {% for service in site.data.services limit: 6 %}
+    <div class="col-4 col-6-medium col-12-small service-box">
+      <span class="icon-circle"><i class="fas {{ service.icon }}"></i></span>
+      <h3>{{ service.title }}</h3>
+      <p>{{ service.summary }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <ul class="actions special">
+    <li><a href="{{ '/services/' | relative_url }}" class="button large">See All Services</a></li>
+  </ul>
+</section>
+
+{% assign latest_posts = site.posts | slice: 0, 3 %}
+{% if latest_posts.size > 0 %}
+<section class="post">
+  <header class="major">
+    <h2>From the Blog</h2>
+    <p>Engineering notes on what we're building and how we run production systems.</p>
+  </header>
+</section>
+
+<section class="posts">
+  {% for post in latest_posts %}
+    <article>
+      <header>
+        <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      </header>
+      {% if post.image %}
+        <a href="{{ post.url | relative_url }}" class="image fit"><img src="{{ post.image | relative_url }}" alt="{{ post.title }}"></a>
+      {% endif %}
+      <p>{{ post.excerpt | strip_html | truncatewords: 22 }}</p>
+      <ul class="actions special">
+        <li><a href="{{ post.url | relative_url }}" class="button">Read More</a></li>
+      </ul>
+    </article>
+  {% endfor %}
+</section>
+
+<section class="post">
+  <ul class="actions special">
+    <li><a href="{{ '/blog/' | relative_url }}" class="button large">Visit the Blog</a></li>
+  </ul>
+</section>
+{% endif %}
+
+<section class="post">
+  <header class="major">
+    <h2>Have a project in mind?</h2>
+    <p>Tell us what you're building — we'll help you scope it out.</p>
+  </header>
+  <ul class="actions special">
+    <li><a href="mailto:{{ site.company.email }}" class="button large primary">Email {{ site.company.email }}</a></li>
+    <li><a href="{{ '/about/' | relative_url }}" class="button large">About {{ site.company.name }}</a></li>
+  </ul>
+</section>

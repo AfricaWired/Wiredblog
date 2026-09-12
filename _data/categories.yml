@@ -1,0 +1,18 @@
+- name: Software Engineering
+  slug: software-engineering
+  description: Custom software, web, mobile and enterprise application development.
+- name: Cloud & Infrastructure
+  slug: cloud-infrastructure
+  description: Hosting, cloud architecture, DevOps and infrastructure management.
+- name: Cybersecurity
+  slug: cybersecurity
+  description: Penetration testing, security audits and secure software practices.
+- name: Data & AI
+  slug: data-ai
+  description: Data engineering, analytics, machine learning and AI-powered automation.
+- name: UI/UX & Design
+  slug: ui-ux-design
+  description: Product design, design systems and digital branding.
+- name: Company News
+  slug: company-news
+  description: Announcements and updates from AfricaWired.
